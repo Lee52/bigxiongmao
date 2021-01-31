@@ -935,9 +935,9 @@ window.__require = function e(t, n, o) {
                         this.failedUiBox.runAction(cc.moveTo(0.3, e).easing(cc.easeBackIn()));
                     }, t.prototype.OnClickCloseMask = function () {
                         this.canClick && 0 == cc.find('Canvas/uiEffectPanel').childrenCount && a.default.Instance.RestartGame();
-                    }, t.prototype.OnClickMoreGame = function () {
+                    }, t.prototype.OnClickMoreGame = function () {//改动处
                         this.canClick && (this.moreGameBtn.off(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.canClick = !1, this.moreGameBtn.runAction(cc.sequence(cc.scaleTo(0.1, 1.1), cc.scaleTo(0.1, 1))), this.scheduleOnce(function () {
-                            window.location.href = 'http://m.wesane.com/';
+                            window.location.href = 'https://www.sxdaily.com.cn/2020-08/03/content_8634230.html';//在群众端搜索，外面显示874，点进去变894，退出来再点进去变910，再退再点变926；30号上午群众端搜索，外面874，点进去935
                         }, 0.15));
                     }, t.prototype.GetContentByScore = function (e) {
                         var t = Math.ceil(e / 1500 * 94);
@@ -1367,7 +1367,7 @@ window.__require = function e(t, n, o) {
                     }, t.prototype.onTouchEnd = function (e) {
                         var t = this;
                         i.default.playerTouch && null != a.default.Instance.targetFruit && 1 == this.touchNum && (this.touchNum = 0, a.default.Instance.targetFruit.getComponent(cc.PhysicsCircleCollider).radius = a.default.Instance.targetFruit.height / 2, a.default.Instance.targetFruit.getComponent(cc.PhysicsCircleCollider).apply(), a.default.Instance.targetFruit.getComponent(cc.RigidBody).type = cc.RigidBodyType.Dynamic, a.default.Instance.targetFruit.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, -800), a.default.Instance.targetFruit = null, this.scheduleOnce(function () {
-                            i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(1), t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(1), t.createFruitCount++) : 2 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(3), t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(3), t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(4), t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(s.default.RandomInteger(1, 6)), t.createFruitCount++));
+                            i.default.GameUpdateCtrl && (0 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), t.createFruitCount++) : 1 == t.createFruitCount ? (a.default.Instance.createOneFruit(0), t.createFruitCount++) : 2 == t.createFruitCount ? (a.default.Instance.createOneFruit(1), t.createFruitCount++) : 3 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), t.createFruitCount++) : 4 == t.createFruitCount ? (a.default.Instance.createOneFruit(2), t.createFruitCount++) : 5 == t.createFruitCount ? (a.default.Instance.createOneFruit(3), t.createFruitCount++) : t.createFruitCount > 5 && (a.default.Instance.createOneFruit(s.default.RandomInteger(0, 5)), t.createFruitCount++));
                         }, 0.5));
                     }, t.prototype.closeTouch = function () {
                         this.node.off(cc.Node.EventType.TOUCH_START, this.onTouchStart, this), this.node.off(cc.Node.EventType.TOUCH_MOVE, this.onTouchMove, this), this.node.off(cc.Node.EventType.TOUCH_END, this.onTouchEnd, this), this.node.off(cc.Node.EventType.TOUCH_CANCEL, this.onTouchEnd, this);
@@ -3103,6 +3103,7 @@ window.__require = function e(t, n, o) {
                             c == r && c < 9 && r < 9 ? (this.pengzhuangCount += 1, 0 == t.node.getComponent('fruitData').getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), cc.tween(t.node).to(0.1, { position: n.node.position }).call(function () {
                                 i.default.Instance.createFruitSui(o.fruitNumber, n.node.position), i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width), i.default.Instance.createLevelUpFruit(o.fruitNumber + 1, n.node.position), n.node.active = !1, t.node.active = !1, n.node.destroy(), t.node.destroy();
                             }).start())) : c == r && 9 == c && 9 == r && (this.pengzhuangCount += 1, 0 == t.node.getComponent('fruitData').getNumber() && (a.default.score += this.fruitNumber + 1, u.default.Instance.SetScoreTween(a.default.score), n.node.getComponent(cc.PhysicsCircleCollider).radius = 0, n.node.getComponent(cc.PhysicsCircleCollider).apply(), this.node.getComponent(cc.PhysicsCircleCollider).radius = 0, this.node.getComponent(cc.PhysicsCircleCollider).apply(), a.default.playerTouch = !1, cc.tween(t.node).to(0.1, { position: n.node.position }).call(function () {
+							    i.default.Instance.createFruitSui(o.fruitNumber, n.node.position), i.default.Instance.createFruitL(o.fruitNumber, n.node.position, n.node.width), i.default.Instance.createLevelUpFruit(o.fruitNumber + 1, n.node.position);
                                 var e = cc.find('Canvas/upEffectParent').getChildByName('daxigua');
                                 e.active = !0, e.opacity = 0, cc.tween(e).to(0.5, { opacity: 150 }).start();
                                 var c = new cc.Node();
